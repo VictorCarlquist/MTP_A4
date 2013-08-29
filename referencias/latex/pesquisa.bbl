@@ -1,0 +1,56 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v<VERSION> }
+
+\bibitem[Belfiore 2006]{0006-pdf}
+\abntrefinfo{Belfiore}{BELFIORE}{2006}
+{BELFIORE, P.~P.
+\emph{Scatter search para Problemas de Roteirização de Veículos com Frota
+  Heterogênea, Janelas de Tempo e Entregas Fracionadas.}
+Tese (Doutorado) --- Escola Politécnica da Universidade de São Paulo.
+  Departamento de Engenharia de Produção., 2006.}
+
+\bibitem[Carvalho 2013]{0001-pdf}
+\abntrefinfo{Carvalho}{CARVALHO}{2013}
+{CARVALHO, A.~P. de~Leon F.~de. \emph{Algoritmos Genéticos}. 2013.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www2\-.icmc\-.usp\-.br\-/\~{}andre\-/research\-/genetic\-/$>$}{http://www2.icmc.usp.br/~andre/research/genetic/}.}
+
+\bibitem[Cheang et al. 2012]{0007-pdf}
+\abntrefinfo{Cheang et al.}{CHEANG et al.}{2012}
+{CHEANG, B. et al. Multiple pickup and delivery traveling salesman problem with
+  last-in-first-out loading and distance constraints.
+\emph{elsevier}, p. 60--75, junho 2012.}
+
+\bibitem[Correia 2003]{0008-pdf}
+\abntrefinfo{Correia}{CORREIA}{2003}
+{CORREIA, M. Algoritmos genéticos.
+\emph{dosalgarves}, p. 36--43, junho 2003.}
+
+\bibitem[DEE/PUC-Rio 2008]{0003-pdf}
+\abntrefinfo{DEE/PUC-Rio}{DEE/PUC-RIO}{2008}
+{DEE/PUC-RIO, I. \emph{Desenvolvimento de um Algoritmo Genético}. 2008.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www\-.fermentas\-.com\-/techinfo\-/nucleicacids\-/maplambda\-.htm$>$}{http://www.fermentas.com/techinfo/nucleicacids/maplambda.htm}.}
+
+\bibitem[Pacheco e Fukasawa 2010]{0002-pdf}
+\abntrefinfo{Pacheco e Fukasawa}{PACHECO; FUKASAWA}{2010}
+{PACHECO, M.~A.; FUKASAWA, R. Resolução do problema do entregador viajante.
+\emph{Revista de Inteligência Computacional Aplicada}, n.~4, 2010.}
+
+\bibitem[Pacheco 1999]{0004-pdf}
+\abntrefinfo{Pacheco}{PACHECO}{1999}
+{PACHECO, M. A.~C. \emph{ALGORITMOS GENÉTICOS: PRINCÍPIOS E APLICAÇÕES}.
+[S.l.], 1999.}
+
+\bibitem[Wu 2007]{0005-pdf}
+\abntrefinfo{Wu}{WU}{2007}
+{WU, L.
+\emph{O problema de roteirização periódica de veículos}.
+Tese (Doutorado) --- Escola Politécnica da Universidade de São Paulo.
+  Departamento de Engenharia de Transportes., 2007.}
+
+\end{thebibliography}
