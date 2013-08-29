@@ -1,0 +1,51 @@
+*** http://www2.icmc.usp.br/~andre/research/genetic/
+nome arquivo: 0001.pdf
+- Artigo de introdução básica sobre o assunto.
+
+*** http://rica.ele.puc-rio.br/media/Revista_rica_n4_a8.pdf
+nome arquivo: 0002.pdf
+- Problema do entregador viajante. A diferença entre o problema clássico 
+- do caixeiro viajante está no fato de que, nesse caso, o que foi levado 
+- em conta foi a rapidez da entrega, não o melhor caminho a ser percorrido. 
+- Pode ajudar na pesquisa nos introduzindo ao conceito de algoritmo genético.
+
+*** http://www2.ica.ele.puc-rio.br/Downloads%5C37/CE-GA01_Funcao%20F6.pdf
+nome arquivo: 0003.pdf
+- Apresentação sobre desenvolvimento de um algoritmo genético. Fala como representar, 
+- decodificar, avaliar, operadores, técnicas e parâmetros. Pode nos auxiliar no 
+- desenvolvimento do nosso próprio algoritmo.
+
+
+*** http://www.ica.ele.puc-rio.br/downloads/38/ce-apostila-comp-evol.pdf
+nome arquivo: 0004.pdf
+- Apostila contendo informações básicas sobre algoritmos genéticos. Faz uma analogia 
+- sobre a teoria Darwiniana e a teoria dos algoritmos genéticos. Pode nos ajudar a 
+- entender o assunto.
+
+*** http://www.teses.usp.br/teses/disponiveis/3/3138/tde-01082007-175300/publico/DissertacaoEdRevLWu.pdf
+nome arquivo: 0005.pdf
+- O problema de roteirização periódica de veículos. Já entrando no tema do trabalho que trata de MTSP. 
+- Esse artigo fala sobre o problema de roteirização periódica de veículos visando melhorar os custos 
+- gerados pela má organização dos roteiros. Há uma referência ao problema de roteirização periódica 
+- serem definidos como problemas de múltiplos carteiros viajantes com restrições de capacidade e outras 
+- restrições... Ajuda a dar uma visão geral sobre o tema dos Múltiplos Caixeiros Viajantes.
+
+*** http://www.teses.usp.br/teses/disponiveis/3/3136/tde-05092006-145756/publico/TesePatriciaPradoBelfiore.pdf
+nome arquivo: 0006.pdf
+- Problema de roteirização com frota heterogênea, restrições de janelas de tempo e entregas fracionadas. 
+- É uma fusão dos problemas de roteirização com frota heterogênica (HFVRP), com janelas de tempo (VRPTW)
+- e com entregas fracionadas (VRPSD). Pode nos ajudar dando-nos uma ideia de como esses problemas trabalham 
+- separadamente.
+
+*** http://link.periodicos.capes.gov.br/sfxlcl41?frbrVersion=5&ctx_ver=Z39.88-2004&ctx_enc=info:ofi/enc:UTF-8&ctx_tim=2013-08-14T21%3A08%3A42IST&url_ver=Z39.88-2004&url_ctx_fmt=infofi/fmt:kev:mtx:ctx&rfr_id=info:sid/primo.exlibrisgroup.com:primo3-Article-sciversesciencedirect_elsevier&rft_val_fmt=info:ofi/fmt:kev:mtx:&rft.genre=article&rft.atitle=Multiple%20pickup%20and%20delivery%20traveling%20salesman%20problem%20with%20last-in-first-out%20loading%20and%20distance%20constraints&rft.jtitle=European%20Journal%20of%20Operational%20Research&rft.btitle=&rft.aulast=Cheang&rft.auinit=&rft.auinit1=&rft.auinitm=&rft.ausuffix=&rft.au=Cheang%2C%20Brenda&rft.aucorp=&rft.date=20121116&rft.volume=223&rft.issue=1&rft.part=&rft.quarter=&rft.ssn=&rft.spage=60&rft.epage=75&rft.pages=60-75&rft.artnum=&rft.issn=0377-2217&rft.eissn=&rft.isbn=&rft.sici=&rft.coden=&rft_id=info:doi/10.1016/j.ejor.2012.06.019&rft.object_id=&svc_val_fmt=info:ofi/fmt:kev:mtx:sch_svc&rft.eisbn=&rft_dat=%3Csciversesciencedirect_elsevier%3ES0377-2217(12)00474-2%3C/sciversesciencedirect_elsevier%3E&rft_id=info:oai/&svc.fulltext=yes
+nome arquivo: 0007.pdf
+- Problema do Caixeiro viajante com mútiplos coletas e entregas com carregamento de fila e restrições 
+- de distância. Trata do problema do caixeiro viajante extendido por adicionar dois fatores: o uso 
+- de múltiplos veículos e a limitação na distância que cada veículo pode percorrer, ambos ocorrendo 
+- ao mesmo tempo. Pode nos ajudar a entender melhor o problema do mTSP.
+
+
+*** 
+Nome arquivo: 0008.pdf
+- Apresenta os algoritmos genéticos de forma simplificada.
+

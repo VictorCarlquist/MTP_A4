@@ -1,0 +1,14 @@
+\changetocdepth {3}
+\select@language {brazil}
+\contentsline {chapter}{Sum\'ario}{3}{section*.2}
+\contentsline {part}{\partnumberline {I}Parte Inicial}{5}{part.1}
+\contentsline {chapter}{\chapternumberline {1}Resumo das Referências}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Algoritmos Genéticos}{7}{section.1.1}
+\contentsline {section}{\numberline {1.2}O problema do entregador viajante}{7}{section.1.2}
+\contentsline {section}{\numberline {1.3}Desenvolvimento de um Algoritmo Genético}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}Algoritmos Genéticos: princípios e aplicações}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}O problema de roteirização periódica de veículos}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}Scatter search para Problemas de Roteirização de Veículos com Frota Heterogênea, Janelas de Tempo e Entregas}{8}{section.1.6}
+\contentsline {section}{\numberline {1.7}Multiple pickup and delivery traveling salesman problem with last-in-first-out loading and distance constraints}{8}{section.1.7}
+\contentsline {section}{\numberline {1.8}Agoritmos Genéticos - Introdução}{8}{section.1.8}
+\contentsline {chapter}{Refer\^encias}{9}{section*.6}

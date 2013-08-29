@@ -1,0 +1,117 @@
+\documentclass[12pt,openright,a4paper]{abntex2}
+\usepackage{fontspec}
+\usepackage[alf]{abntex2cite}
+\usepackage{lastpage}
+%\usepackage{ifsp-cjo}
+
+\titulo{}
+\autor{Guilherme Augusto de Macedo, Victor Hugo Carquist da Silva}
+\data{\today}
+\instituicao{IFSP - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus Campos do Jordão}
+\orientador{Thalita Biazzuz Veronese}
+\preambulo{... trabalho feito para o curso de Tecnologia e Análise de Desenvolvimento de Sistemas do \imprimirinstituicao}
+\tipotrabalho{Pesquisa}
+\local{Campos do Jordão - SP}
+
+\makeatletter
+\hypersetup{
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfkeywords={PALAVRAS}{CHAVES}{EM}{PORTUGUES},
+    pdfcreator={LaTeX with abnTeX2},
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+\makeatother
+
+\begin{document}
+
+\imprimircapa
+\imprimirfolhaderosto
+
+\tableofcontents
+
+\newpage
+
+\begin{resumo}
+	Hoje em dia, o transporte veicular se tornou algo de suma importância para o âmbito
+	econômico e social de nossa sociedade, impactando tanto positivamente quanto negativa-
+	mente. 
+	Além de agilizar o transporte de pessoas, materiais e animais, também gera um
+	custo para as empresas manterem estes veículos. Se um veículo percorrer uma menor rota,
+	a empresa diminui custos, como, por exemplo, combustível, manutenção e tempo. 
+
+	Cada vez as cidades estão ficando maiores e a complexidade rodoviária cresce, dificultando a
+	análise da melhor rota a se percorrer. Esse problema tende a ficar mais complexo, conforme o aumento de
+	veículos que a empresa possui.
+	
+	A solução proposta é desenvolver um \textit{software} que resolva o problema do MTSP (\textit{Multiple Traveling Salesman Problem}).
+	Esta solução será integrada com o Google Maps, podendo ser usado para calcular rota de vans escolares e entregas de mercadorias, com diversos veículos,
+	diminuindo custo e tempo.
+    \vspace{\onelineskip}
+    \noindent
+    %\textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\end{resumo}
+
+\textual
+
+\part{Parte Inicial}
+
+\chapter{Resumo das Referências}
+
+\section{Algoritmos Genéticos}
+Artigo de introdução básica sobre o assunto. \cite{0001-pdf}
+\\
+
+\section{O problema do entregador viajante}
+Problema do entregador viajante. A diferença entre o problema clássico 
+do caixeiro viajante está no fato de que, nesse caso, o que foi levado 
+em conta foi a rapidez da entrega, não o melhor caminho a ser percorrido. 
+Pode ajudar na pesquisa nos introduzindo ao conceito de algoritmo genético. \cite{0002-pdf}
+\\
+
+\section{Desenvolvimento de um Algoritmo Genético}
+Apresentação sobre desenvolvimento de um algoritmo genético. Fala como representar, 
+decodificar, avaliar, operadores, técnicas e parâmetros. Pode nos auxiliar no 
+desenvolvimento do nosso próprio algoritmo. \cite{0003-pdf}
+\\
+
+\section{Algoritmos Genéticos: princípios e aplicações}
+Apostila contendo informações básicas sobre algoritmos genéticos. Faz uma analogia 
+sobre a teoria Darwiniana e a teoria dos algoritmos genéticos. Pode nos ajudar a 
+entender o assunto. \cite{0004-pdf}
+\\
+
+\section{O problema de roteirização periódica de veículos}
+O problema de roteirização periódica de veículos. Já entrando no tema do trabalho que trata de MTSP. 
+Esse artigo fala sobre o problema de roteirização periódica de veículos visando melhorar os custos 
+gerados pela má organização dos roteiros. Há uma referência ao problema de roteirização periódica 
+serem definidos como problemas de múltiplos carteiros viajantes com restrições de capacidade e outras 
+restrições... Ajuda a dar uma visão geral sobre o tema dos Múltiplos Caixeiros Viajantes. \cite{0005-pdf}
+\\
+
+\section{Scatter search para Problemas de Roteirização de Veículos com Frota Heterogênea, Janelas de Tempo e Entregas}
+Problema de roteirização com frota heterogênea, restrições de janelas de tempo e entregas fracionadas. 
+É uma fusão dos problemas de roteirização com frota heterogênica (HFVRP), com janelas de tempo (VRPTW)
+e com entregas fracionadas (VRPSD). Pode nos ajudar dando-nos uma ideia de como esses problemas trabalham 
+separadamente.\cite{0006-pdf}
+\\
+
+\section{Multiple pickup and delivery traveling salesman problem with last-in-first-out loading and distance constraints}
+Problema do Caixeiro viajante com mútiplos coletas e entregas com carregamento de fila e restrições 
+de distância. Trata do problema do caixeiro viajante extendido por adicionar dois fatores: o uso 
+de múltiplos veículos e a limitação na distância que cada veículo pode percorrer, ambos ocorrendo 
+ao mesmo tempo. Pode nos ajudar a entender melhor o problema do mTSP. \cite{0007-pdf}
+\\
+
+\section{Agoritmos Genéticos - Introdução}
+Apresenta os algoritmos genéticos de forma simplificada. \cite{0008-pdf}
+
+\postextual
+
+\bibliography{refs}
+
+\end{document}
