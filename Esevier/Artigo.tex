@@ -133,9 +133,7 @@ Grafos
 		
 		Algoritmos Genéticos são inspirados no princípio Darwiniano da evolução das espécies e na genética \cite{0004-pdf}. 
 		São utilizados para achar o melhor caminho e têm como característica básica o fato de que o mesmo algoritmo, 
-		executado mais de uma vez, pode resultar em resultados diferentes. O fato do resultado ser diferente, não significa 
-		que uma solução é melhor ou pior do que a já encontrada. Sendo assim, AGs são utilizados para resolverem problemas 
-		cuja solução não seja exata, ou seja, envolva várias soluções ótimas.
+		executado mais de uma vez, pode resultar em resultados diferentes, mas sempre próximo da solução ótima. AGs são utilizados para resolverem problemas de otimização, utilizando o método probabilístico.
 	
 		O Problema do Caixeiro Viajante (\textit{TSP - Traveling Salesman Problem}) é bastante conhecido e visa escolher o 
 		melhor caminho ao percorrer todas as arestas de um grafo partindo de um determinado vértice.
@@ -160,8 +158,8 @@ Grafos
 		%% Faremos isso utilizando a biblioteca tal no SO Linux com a seguinte configuração...
 		Será implementada em linguagem \textit{C}, utilizando o compilador \textit{GCC}, padrão no \textit{Linux}, 
 		algumas soluções de AG aplicadas na resolução do \textit{mTSP}. Com base nessas implementações, será 
-		realizada uma análise de desempenho sobre os resultados obtidos. Com isso, poderemos demonstrar quais 
-		técnicas são mais eficazes na resolução desse tipo de problema e quais devem ser deixadas de lado.
+		realizada uma análise de desempenho sobre os resultados obtidos. Com isso, será possível demonstrar quais 
+		técnicas são mais eficazes na resolução desse tipo de problema.
 		
 	
 %% Desenvolvimento - Explicação: tornar evidente o que estava implícito, obscuro ou complexo.
@@ -178,7 +176,7 @@ Grafos
 	%% Breve Histórico dos AGs
 	Com base no princípio de Charles Darwin, John Holland começou a desenvolver pesquisas sobre o tema e em 1975 
 	publicou uma obra intitulada "Adaptation in Natural and Artificial Systems" hoje considerada a bíblia dos AGs.
-	Em 1980, um aluno Holland consegue a primeira aplicação industrial de AGs, desde então esses tipos de agoritmos vem 
+	Em 1980, um aluno Holland consegue a primeira aplicação industrial de AGs, desde então esses tipos de algoritmos vem 
 	sendo utilizados em técnicas de busca e otimização.
 
 	%% Analogia entre AGs e Evolução das espécies
@@ -187,27 +185,25 @@ Grafos
 	ao processo evolucionário, processo esse constituído por vários ciclos, gera indivíduos cada vez mais 
 	aptos.
 
-	De forma clara e simples, AGs são algoritmos probabilísticos que fornecem um mecanismo de busca paralela e adaptativa
-	baseado no princípio de sobrevivência dos mais aptos e na reprodução \cite{0004-pdf}.
+	Dessa forma, AGs são algoritmos probabilísticos que fornecem um mecanismo de busca paralela e adaptativa. O indivíduo melhor adaptado terá uma probabilidade maior de se reproduzir \cite{0004-pdf}.
 
 	%% Características dos AGs
-	O objetivo dos AGs é gerar indivíduos cada vez mais aptos, isso não significa que se executarmos o algoritmo 
-	duas vezes ou mais teremos a mesma solução. Teremos sim um indivíduo apto no final, mas não necessariamente 
-	o mesmo indivíduo, com as mesmas características.
+	O objetivo dos AGs é gerar indivíduos cada vez mais aptos, isso não significa que com a execução do algoritmo 
+	diversas vezes para a mesma solução, o indivíduo final será o mesmo.
 
 \section {Problema do Caixeiro Viajante (\textit{Traveling Salesman Problem} - TSP}
 	%% TSP explicados mais a fundo do que na introdução.
-	Dentre os problemas de roteirização de veículos, o problema do Caixeiro Viajante (TSP) é o mais simples.
+	%Dentre os problemas de roteirização de veículos, o problema do Caixeiro Viajante (TSP) é o que possuí .
 	O objetivo do TSP é encontrar em um grafo G = ( N , A ) o caminho de menor custo, 
 	de forma que todos os vértices sejam visitados uma única vez \cite{0006-pdf}.
 	
 	Nesse problema, o objetivo é o caixeiro viajante visitar todos os seus clientes (nós) uma única vez 
-	e após, voltar ao ponto de partida.
+	e voltar ao ponto de partida.
 
-\section {Problema dos Múltiplos Caixeiros Viajantes (\textit{Multiple Traveling Salesman Problem } – mTSP}}
+\section {Problema dos Múltiplos Caixeiros Viajantes (\textit{Multiple Traveling Salesman Problem } – mTSP}
 	%% mTSP explicados mais a fundo do que na introdução.
 	O Problema dos Múltiplos Caixeiros Viajantes (mTSP) é uma extensão do problema do caixeiro viajante, 
-	porém, ao invés de um único roteiro, determinam-se múltiplos roteiros \cite{0006-pdf}. 
+	porém com múltiplos roteiros e múltiplos caixeiros viajantes\cite{0006-pdf}. 
 	
 
 \section {Algoritmos Genéticos e o Problema dos Caixeiros Viajantes}
