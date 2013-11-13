@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Artigo.aux
+The style file: model1a-num-names.bst
+Database file #1: refs.bib.bib
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+You've used 3 entries,
+            2893 wiz_defined-function locations,
+            639 strings with 5621 characters,
+and the built_in function-call counts, 1269 in all, are:
+= -- 81
+> -- 30
+< -- 3
++ -- 12
+- -- 9
+* -- 99
+:= -- 201
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 16
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 118
+empty$ -- 108
+format.name$ -- 12
+if$ -- 224
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 20
+newline$ -- 24
+num.names$ -- 12
+pop$ -- 57
+preamble$ -- 1
+purify$ -- 18
+quote$ -- 0
+skip$ -- 34
+stack$ -- 0
+substring$ -- 36
+swap$ -- 54
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 27
+warning$ -- 0
+while$ -- 9
+width$ -- 0
+write$ -- 50

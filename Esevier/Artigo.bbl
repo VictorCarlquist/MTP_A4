@@ -1,0 +1,32 @@
+\begin{thebibliography}{3}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Techreport
+\bibitem[{Pacheco(1999)}]{0004-pdf}
+\bibinfo{author}{M.~A.~C. Pacheco}, \bibinfo{title}{ALGORITMOS GENÉTICOS:
+  PRINCÍPIOS E APLICAÇÕES}, \bibinfo{type}{Technical Report}, Pontifícia
+  Universidade Católica do Rio de Janeiro, \bibinfo{year}{1999}.
+%Type = Phdthesis
+\bibitem[{Wu(2007)}]{0005-pdf}
+\bibinfo{author}{L.~Wu}, \bibinfo{title}{O problema de roteirização
+  periódica de veículos}, Ph.D. thesis, Escola Politécnica da Universidade
+  de São Paulo. Departamento de Engenharia de Transportes.,
+  \bibinfo{year}{2007}.
+%Type = Phdthesis
+\bibitem[{Belfiore(2006)}]{0006-pdf}
+\bibinfo{author}{P.~P. Belfiore}, \bibinfo{title}{Scatter search para Problemas
+  de Roteirização de Veículos com Frota Heterogênea, Janelas de Tempo e
+  Entregas Fracionadas.}, Ph.D. thesis, Escola Politécnica da Universidade de
+  São Paulo. Departamento de Engenharia de Produção., \bibinfo{year}{2006}.
+
+\end{thebibliography}
