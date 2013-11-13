@@ -1,0 +1,284 @@
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+\usepackage[T1]{fontenc}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+%% \usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+
+\journal{Nuclear Physics B}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Análise do uso de Algoritmos Genéticos na resolução do problema dos Múltiplos Caixeiros Viajantes (\textit{mTSP - Multiple Traveling Salesman Problem})}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{Victor Hugo Carlquist da Silva, Guilherme Augusto de Macedo}
+
+\address{Campos do Jordão/SP}
+
+\begin{abstract}
+%% Text of abstract
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt 
+ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci 
+tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum 
+iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat 
+nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum 
+zzril delenit augue duis dolore te feugait nulla facilisi.
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Algoritmos Genéticos \sep 
+Múltiplos Caixeiros Viajantes \sep 
+Otimização \sep 
+Roteirização \sep
+Grafos
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+%\linenumbers
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Título: Análise do uso de Algoritmos Genéticos na resolução do problema dos Múltiplos Caixeiros Viajantes (\textit{mTSP - Multiple Traveling Salesman Problem})
+
+%% main text
+\section{Introdução}
+	%% Formulação simples e clara do tema da pesquisa e apresentação reduzida do estado da arte do problema
+		%% Explicar sobre algoritmos genéticos e sobre o TSP; e também sobre mTSP
+		
+		Algoritmos Genéticos são inspirados no princípio Darwiniano da evolução das espécies e na genética \cite{0004-pdf}. 
+		São utilizados para achar o melhor caminho e têm como característica básica o fato de que o mesmo algoritmo, 
+		executado mais de uma vez, pode resultar em resultados diferentes. O fato do resultado ser diferente, não significa 
+		que uma solução é melhor ou pior do que a já encontrada. Sendo assim, AGs são utilizados para resolverem problemas 
+		cuja solução não seja exata, ou seja, envolva várias soluções ótimas.
+	
+		O Problema do Caixeiro Viajante (\textit{TSP - Traveling Salesman Problem}) é bastante conhecido e visa escolher o 
+		melhor caminho ao percorrer todas as arestas de um grafo partindo de um determinado vértice.
+
+		%% Justificativa
+		%% Dizer que resolver o problema do TSP é fácil, mas com o mTSP é muito mais difícil.
+		%% Por isso utilização de AG.
+		
+		Ao utilizar AGs para resolver o problema do Caixeiro Viajante observou-se que esse tipo de algorimo é menos eficiente 
+		do que soluções feitas com algoritmos menos arrojados.
+		
+		Quando pensamos em Múltiplos Caixeiros Viajantes, a complexidade do problema aumenta de maneira significante justificando, 
+		assim, o uso de AGs em sua solução.
+		
+	%% Objetivos
+		%%Esperamos explicar de forma clara por que os AG são mais eficientes para resolver esse tipo de problema
+		
+	%% Exposição da metodologia
+		%% Resolveremos o problema dos mTSP com e sem AG, mediremos os resultados, entenderemos o que aconteceu e 
+		%% mostraremos os resultados
+	%% Situação de tempo e espaço em que o problema é estudado
+		%% Faremos isso utilizando a biblioteca tal no SO Linux com a seguinte configuração...
+		Será implementada em linguagem \textit{C}, utilizando o compilador \textit{GCC}, padrão no \textit{Linux}, 
+		algumas soluções de AG aplicadas na resolução do \textit{mTSP}. Com base nessas implementações, será 
+		realizada uma análise de desempenho sobre os resultados obtidos. Com isso, poderemos demonstrar quais 
+		técnicas são mais eficazes na resolução desse tipo de problema e quais devem ser deixadas de lado.
+		
+	
+%% Desenvolvimento - Explicação: tornar evidente o que estava implícito, obscuro ou complexo.
+	
+\section {Algoritmos Genéticos}
+	%% Algotimos Genéticos explicados mais a fundo do que na introdução.
+
+	%% Genética
+	Em seu reconhecido livro A Origem das Espécies, Charles Darwin propôs que os organismos vivos se adaptam através 
+	da seleção natural. Seleção natural nada mais é do que a preservação das condições favoráveis e a eliminação das 
+	variações nocivas. Essa seleção natural é obtida através do cruzamento entre os indivíduos, gerando assim novos
+ 	indivíduos mais adaptados.
+
+	%% Breve Histórico dos AGs
+	Com base no princípio de Charles Darwin, John Holland começou a desenvolver pesquisas sobre o tema e em 1975 
+	publicou uma obra intitulada "Adaptation in Natural and Artificial Systems" hoje considerada a bíblia dos AGs.
+	Em 1980, um aluno Holland consegue a primeira aplicação industrial de AGs, desde então esses tipos de agoritmos vem 
+	sendo utilizados em técnicas de busca e otimização.
+
+	%% Analogia entre AGs e Evolução das espécies
+	Na biologia, o código genético é a identidade do indivíduo e esses são representados pelos cromossomas. 
+	Na computação, a analogia pode ser dada pelo cromossoma sendo uma estrutura de dados que após submetido 
+	ao processo evolucionário, processo esse constituído por vários ciclos, gera indivíduos cada vez mais 
+	aptos.
+
+	De forma clara e simples, AGs são algoritmos probabilísticos que fornecem um mecanismo de busca paralela e adaptativa
+	baseado no princípio de sobrevivência dos mais aptos e na reprodução \cite{0004-pdf}.
+
+	%% Características dos AGs
+	O objetivo dos AGs é gerar indivíduos cada vez mais aptos, isso não significa que se executarmos o algoritmo 
+	duas vezes ou mais teremos a mesma solução. Teremos sim um indivíduo apto no final, mas não necessariamente 
+	o mesmo indivíduo, com as mesmas características.
+
+\section {Problema do Caixeiro Viajante (\textit{Traveling Salesman Problem} - TSP}
+	%% TSP explicados mais a fundo do que na introdução.
+	Dentre os problemas de roteirização de veículos, o problema do Caixeiro Viajante (TSP) é o mais simples.
+	O objetivo do TSP é encontrar em um grafo G = ( N , A ) o caminho de menor custo, 
+	de forma que todos os vértices sejam visitados uma única vez \cite{0006-pdf}.
+	
+	Nesse problema, o objetivo é o caixeiro viajante visitar todos os seus clientes (nós) uma única vez 
+	e após, voltar ao ponto de partida.
+
+\section {Problema dos Múltiplos Caixeiros Viajantes (\textit{Multiple Traveling Salesman Problem } – mTSP}}
+	%% mTSP explicados mais a fundo do que na introdução.
+	O Problema dos Múltiplos Caixeiros Viajantes (mTSP) é uma extensão do problema do caixeiro viajante, 
+	porém, ao invés de um único roteiro, determinam-se múltiplos roteiros \cite{0006-pdf}. 
+	
+
+\section {Algoritmos Genéticos e o Problema dos Caixeiros Viajantes}
+	%% AG versus TSP
+	
+	A utilização de AGs motrou-se mais eficiente na resolução do mTSP do que na resolução do TSP,  
+	levando-se em conta um maior tempo de processamento para o caso mais complexo \cite{0005-pdf}.
+
+	A solução apresentada em \cite{0006-pdf} propõe resolver os problemas de roteirização de 
+	veículos com entregas fracionadas, problema clássico de roteirização de veículos e com 
+	frota heterogênia criando o algoritmo de roteirização de veículos com frota heterogênea, 
+	restrições de janelas de tempo e entregas fracionadas(\textit{Heterogeneous Fleet Vehicle 
+	Routing Problem with Time Windows and Split Deliveries}(HFVRPTWSD)) utilizando Algoritmo 
+	Genético(AG).
+
+	Também é possível calcular as rotas de múltiplos veículos utilizando AG para igualar o tempo 
+	de espera de encomendas de clientes, sendo que a variável "menor tempo da rota" não é levada 
+	em consideração \cite{0005-pdf}.	
+
+\section {Contextualização - Necessidade de se achar o menor caminho}
+	%% AG e mTSP
+	Hoje em dia o transporte veicular tornou-se algo de suma importância, 
+	impactando tanto positivamente quanto negativamente na sociedade e no meio ambiente. 
+	
+	Além de agilizar o transporte de pessoas, materiais e animais, 
+	o transporte veicular também gera despesas com combustível, manutenção, etc. 
+	Se um veículo percorrer uma menor rota, a empresa diminui custos, com, por exemplo, 
+	combustível, manutenção e tempo de entrega.
+
+	Cada vez as cidades estão ficando maiores e a complexidade rodoviária cresce, dificultando a
+	análise da melhor rota a se percorrer. Esse problema tende a ficar mais complexo conforme 
+	aumenta a quantidade de veículos que a empresa possui. Com isso, surge a necessidade de criar 
+	\textit{softwares} cada vez mais robustos que resolvam o problema de roteirização de veículos.
+
+	
+\section {Implementações de Algoritmos Genéticos na Resolução do Problema dos Múltiplos Caixeiros Viajantes}
+
+\section {Resultados das Implementações}
+		
+	%% Demonstrar: aplicar a argumentação apropriada à natureza do trabalho;
+		%% Apresentação dos resultados obtidos.
+
+\section{Conclusões e Trabalhos Futuros}
+	%% Afirmação sintética da ideia central do trabalho e de pormenores apresentados no texto
+	%% Comentários e consequência da pesquisa, aberturas novas
+		% É isso!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}          ==>>  [#]
+%%   \cite[chap. 2]{key} ==>>  [#, chap. 2]
+%%   \citet{key}         ==>>  Author [#]
+
+%% References with bibTeX database:
+
+\bibliographystyle{model1a-num-names}
+\bibliography{refs.bib}
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-1a-num.tex'.
