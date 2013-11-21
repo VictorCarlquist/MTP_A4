@@ -1,0 +1,125 @@
+\documentclass{abnt} 
+
+\input{Base}
+
+
+%%%%% Dados para criação da capa e folha de rosto %%%%
+\autor{Victor Hugo Carlquist da Silva}
+\titulo{MTSP}
+\orientador{Thalita Biazzuz Veronese}
+\comentario{Trabalho apresentado a Profa. Thalita Biazzuz Veronese, na disciplina de Metodologia de Pesquisa 
+			 no $4^{a}$ módulo do curso de Tecnologia em Análise e Desenvolvimento de Sistemas no IFSP-CJO.}
+\instituicao{Instituto Federal de Educação, Ciência e Tecnologia de São Paulo -- \textit{campus} Campos do Jordão}
+\local{Campos do Jordão}
+\data{\today}
+
+\begin{document}
+	%\bibliographystyle{plain}
+	% Para utilizar o formato padrão de capa da ABNT, substituí o comando \maketitle pelo comando \capa.
+
+	\capa
+	
+	\folhaderosto
+	
+
+	
+	\sumario 
+	
+	\listadetabelas
+	
+	\listadefiguras
+	
+	\chapter{Introdução}
+
+	
+
+	\section{Justificativa}
+		
+		Hoje em dia o transporte veicular tornou-se algo de suma importância, 
+		impactando tanto positivamente quanto negativamente na sociedade e no meio ambiente, principalmente na econômia. 
+		
+		Além de agilizar o transporte de pessoas, materiais e animais, 
+		o transporte veicular também gera despesas com combustível, manutenção, etc. 
+		Se um veículo percorrer uma menor rota, a empresa diminui custos, com, por exemplo, 
+		combustível, manutenção e tempo de entrega.
+
+		Cada vez as cidades estão ficando maiores e a complexidade rodoviária cresce, dificultando a
+		análise da melhor rota a se percorrer. Esse problema tende a ficar mais complexo conforme 
+		aumenta a quantidade de veículos que a empresa possui. Com isso, surge a necessidade de criar 
+		\textit{softwares} cada vez mais robustos que resolvam o problema de roteirização de veículos.
+
+	\section{Metodologia}
+
+		A metodologia de pesquisa para o desenvolvimento deste trabalho esta classificada a seguir:
+		\begin{itemize}
+			\item Natureza: Aplicada;
+			\item Quantos aos objetivos: Exploratória;
+			\item Procedimentos técnicos: Bibliográfica, documental e experimental;
+		\end{itemize}
+	
+		O objetivo é desenvolver um \textit{software} que encontre a rota ótima, ou quase ótima, para múltiplos caixeiros viajantes. O experimento será empírico, modificando o número de vertices do digrafo será possível estudar o desempenho das rotas e o tempo de execução.
+
+		Esta pesquisa tem como objetivo mostrar o uso de Algorítmos Genéticos na resolução do problemas dos múltiplos caixeiros viajantes(\textit{Multiple Traveling Salesman Problem} - MTSP)
+	
+	\section{Algoritmos genéticos}
+
+		Segundo \cite{0008-pdf}, os Algoritmos Genéticos(AG) são técnicas de procura e optimização baseados em mecanismos de seleção natural. 
+
+		Nas décadas de 60 e 70, John Holland e seus colegas da Universidade de Michigan criaram modelos para estudar o processo de adaptação dos seres vivos. Holland realizou diversas pesquisas e em 1975 publicou o seu livro intitulado \textit{Adaptation in Natural and Artificial System}. Hoje, este livro é considerado um dos mais importantes sobre Algoritmos Genéticos \cite{0001-pdf}.
+
+		Em AG, o cromossoma é uma estrutura de dados que armazena uma possível solução de um problema. Sendo que cada indivíduo tem um cromossoma, os indivíduos são cruzados gerando novos indivíduos, conforme a população cresce, surgem indivíduos cada vez mais aptos, sendo que um deles será o mais apto, contendo no seu cromossoma a solução do problema.
+
+		O AG possuí alguns parâmetros que devem ser levados em consideração \cite{0001-pdf}:
+
+		\begin{itemize}
+			\item \textit{Tamanho da população: } Uma população pequena deixará o lento o desempenho, pois terá um pequeno conjunto para a busca de solução do problema. Já uma população muito grande pode afetar o desenpenho do algoritmo;
+			\item \textit{Taxa de Cruzamento: } Quanto maior a taxa, mais rapidaemnte novos indivíduos serão introduzidos na população. Mas se a taxa for muito alta, pode-se eleminar indivíduos aptos. Com a taxa de cruzamento pequena, o algoritmo se torna lento;
+			\item \textit{Taxa de Mutação: } Com uma alta taxa de mutação o algoritmo fica aleatório, mas com uma baixa taxa previne que os indivíduos sejam os mesmos.
+		\end{itemize}
+
+
+		\subsection{Operadores de cruzamento}
+
+			Os operadores de cruzamento definem como ocorrerá o cruzamento entre dois indivíduos.
+
+		\subsubsection{\textit{Partially-mapped crossover} - PMX} 
+
+			O operador de cruzamento de mapeamento parcial seleciona copia os genes do pai e substiu alguns genes de um outro pai, como a \textbf{figura ~\ref{pmx}} demonstra:
+
+			%Figura pmx
+
+			
+
+
+		\section{Problema do Caixeiro Viajante}
+
+		O problema do Caixeiro Viajante(PCV) consiste em estabeler uma rota que passe por cada vértice do grafo apenas uma vez e retorne ao vértice de partida. O número de rotas possíveis pode ser expressa por (n-1)!, sendo n o número de vértices.
+		O problema PCV é classificado como \textit{NP-Hard}, ou seja, não existe algoritmo com limitação polinominal capaz de resolvẽ-lo.\cite{0010-pdf}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\chapter{História}
+	\section{História}
+	
+	\chapter{Conclusão}
+	
+	
+	\nocite{R7}
+	\nocite{fisio}
+	\nocite{olhar}
+	
+	\bibliography{referencias}
+
+\end{document}

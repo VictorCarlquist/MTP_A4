@@ -1,0 +1,13 @@
+\select@language {brazilian}
+\contentsline {chapter}{Lista de Tabelas}{}{chapter*.1}
+\contentsline {chapter}{Lista de Figuras}{}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introdução}{5}{chapter.listoffigures.1}
+\contentsline {section}{\numberline {1.1}Justificativa}{5}{section.listoffigures.1.1}
+\contentsline {section}{\numberline {1.2}Metodologia}{5}{section.listoffigures.1.2}
+\contentsline {section}{\numberline {1.3}Algoritmos genéticos}{6}{section.listoffigures.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Operadores de cruzamento}{7}{subsection.listoffigures.1.3.1}
+\contentsline {subsubsection}{\textit {Partially-mapped crossover} - PMX}{7}{subsection.listoffigures.1.3.1}
+\contentsline {section}{\numberline {1.4}Problema do Caixeiro Viajante}{7}{section.listoffigures.1.4}
+\contentsline {chapter}{\numberline {2}História}{8}{chapter.listoffigures.2}
+\contentsline {section}{\numberline {2.1}História}{8}{section.listoffigures.2.1}
+\contentsline {chapter}{\numberline {3}Conclusão}{9}{chapter.listoffigures.3}
