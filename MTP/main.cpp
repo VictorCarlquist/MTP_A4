@@ -11,17 +11,17 @@ using namespace std;
 
 
 
-float m[N][N] = { {0.0f,1.0f    ,1.0f  ,IN    ,1.0f,IN,1.0f,IN},
-                  {IN,0.0f      ,IN,5.0f      ,7.0f,IN,1.0f,IN},
-                  {3.0f,IN    ,0.0f  ,IN    ,IN,5.0f,1.0f,IN},
-                  {IN,IN    ,1.0f  ,0.0f      ,IN,2.0f,IN,IN},
-                  {IN  ,2.0f      ,IN,IN    ,0.0f,IN,1.0f,IN},
-                  {1.0f,IN    ,8.0f  ,1.0f,IN,0.0f,IN,1.0f},
-                  {IN  ,IN    ,IN,3.0f      ,IN,IN,0.0f,1.0f},
-                  {IN  ,IN    ,IN,IN,6.0f,IN,1.0f,0.0f}
+int m[N][N] = { {0,1,1,1,1,1,1,1},
+                {1,0,1,1,1,1,1,1},
+                {1,1,0,1,1,1,1,1},
+                {1,1,1,0,1,1,1,1},
+                {1,1,1,1,0,1,1,1},
+                {1,1,1,1,1,0,1,1},
+                {1,1,1,1,1,1,0,1},
+                {1,1,1,1,1,1,1,0}
                  };
 
-float **cities;
+int **cities;
 int nSalesman  = 2;
 int nObjective = 4;
 
@@ -73,17 +73,17 @@ int main()
     srand(time(NULL));
 
     int i,j;
-    cities = (float**) malloc(sizeof(float*) * N);
+    cities = (int**) malloc(sizeof(int*) * N);
     for(i=0;i<N;++i)
-        cities[i] = (float*) malloc(sizeof(float) * N);
+        cities[i] = (int*) malloc(sizeof(int) * N);
     for(i=0;i<N;++i)
         for(j=0;j<N;++j)
             if(i!=j)
-                cities[i][j] = 1.0f;
+                cities[i][j] = m[i][j];
             else
                 cities[i][j] = 0;
     createDigraph();
-    GA *a = new GA(nObjective, nSalesman,0.5f,10000,depot,4,objectives,N,cities);
+    GA *a = new GA(nObjective, nSalesman,0.5f,100,depot,4,objectives,N,cities);
     Chromosome *x = a->evolution();
 
     cout << endl << "------------------------------" << endl;

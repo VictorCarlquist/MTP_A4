@@ -60,14 +60,24 @@
 		O objetivo é desenvolver um \textit{software} que encontre a rota ótima, ou quase ótima, para múltiplos caixeiros viajantes. O experimento será empírico, modificando o número de vertices do digrafo será possível estudar o desempenho das rotas e o tempo de execução.
 
 		Esta pesquisa tem como objetivo mostrar o uso de Algorítmos Genéticos na resolução do problemas dos múltiplos caixeiros viajantes(\textit{Multiple Traveling Salesman Problem} - MTSP)
-	
+
+	\section{Problema do Caixeiro Viajante (\textit{Traveling Salesman Problem} - TSP)}
+
+		O problema do Caixeiro Viajante(TSP) consiste em estabeler uma rota que passe por cada vértice do grafo apenas uma vez e retorne ao vértice de partida. O número de rotas possíveis pode ser expressa por (n-1)!, sendo n o número de vértices.
+		O problema TSP é classificado como \textit{NP-Hard}, ou seja, não existe algoritmo com limitação polinominal capaz de resolvẽ-lo \cite{0010-pdf}.
+
+	\section{Problema  dos Múltiplos Caixeiros Viajantes (\textit{Multiple Traveling Salesman Problem} - mTSP)}
+
+	O problema dos Múltiplos Caixeiros Viajantes (mTSP) consiste em estabeler várias rotas, uma para cada caixeiro que pode estar em lugares diferentes, passando por cada vértice do grafo apenas uma vez e retorne ao seu vértice de partida. 
+
+
 	\section{Algoritmos genéticos}
 
 		Segundo \cite{0008-pdf}, os Algoritmos Genéticos(AG) são técnicas de procura e optimização baseados em mecanismos de seleção natural. 
 
 		Nas décadas de 60 e 70, John Holland e seus colegas da Universidade de Michigan criaram modelos para estudar o processo de adaptação dos seres vivos. Holland realizou diversas pesquisas e em 1975 publicou o seu livro intitulado \textit{Adaptation in Natural and Artificial System}. Hoje, este livro é considerado um dos mais importantes sobre Algoritmos Genéticos \cite{0001-pdf}.
 
-		Em AG, o cromossoma é uma estrutura de dados que armazena uma possível solução de um problema. Sendo que cada indivíduo tem um cromossoma, os indivíduos são cruzados gerando novos indivíduos, conforme a população cresce, surgem indivíduos cada vez mais aptos, sendo que um deles será o mais apto, contendo no seu cromossoma a solução do problema.
+		Em AG, o cromossomo é uma estrutura de dados (um conjunto de genes) que armazena uma possível solução de um problema. Sendo que cada indivíduo tem um cromossomo, os indivíduos são cruzados gerando novos indivíduos, conforme a população cresce, surgem indivíduos cada vez mais aptos, sendo que um deles será o mais apto, contendo no seu cromossomo a solução do problema.
 
 		O AG possuí alguns parâmetros que devem ser levados em consideração \cite{0001-pdf}:
 
@@ -80,7 +90,16 @@
 
 		\subsection{Operadores de cruzamento}
 
-			Os operadores de cruzamento definem como ocorrerá o cruzamento entre dois indivíduos.
+			Os operadores de cruzamento definem como ocorrerá o cruzamento entre dois indivíduos \cite{0012-pdf}:
+			\begin{itemize}
+				\item \textit{Partially-mapped crossover} (PMX);
+				\item \textit{Edge Recombination} (ERX);
+				\item \textit{Cycle crossover} (CX);
+				\item \textit{Order Crossover} (OX);
+				\item \textit{Order Based Crossover} (OX2);
+			\end{itemize}
+
+			Neste trabalho apenas será abordado o PMX, que foi utilizado no software, e o ERX, que será utilizado nas versões futuras do sistema.
 
 		\subsubsection{\textit{Partially-mapped crossover} - PMX} 
 
@@ -88,7 +107,7 @@
 
 			%Figura pmx 0012.pdf pg75
 
-		\subsubsection{Operador de Cruzamento \textit{Edge Recombination} (ERX)}
+		\subsubsection{\textit{Edge Recombination} (ERX)}
 
 			Este método é muito utilizado para o problema do caixeiro viajante por priorizar a adjacência dos vértices do grafo.
 
@@ -96,26 +115,92 @@
 
 			\begin{enumerate}
 				\item Criar uma lista de arestas de ambos os pais;
-				\item Deverá ser criada uma lista para cada cidade com todas as cidades conectada a ela e a, pelo menos, um gene do pai
+				\item Deverá ser criada uma lista para cada cidade com todas as cidades conectada a ela e a, pelo menos, um gene do pai;
 			\end{enumerate}
 
+			Considere os dois cromossomos:
 
-		\section{Problema do Caixeiro Viajante}
+			\begin{center}
+			$ P1 = (123456)$ \\
+			$ P2 = (341625)$
+			\end{center}
 
-		O problema do Caixeiro Viajante(PCV) consiste em estabeler uma rota que passe por cada vértice do grafo apenas uma vez e retorne ao vértice de partida. O número de rotas possíveis pode ser expressa por (n-1)!, sendo n o número de vértices.
-		O problema PCV é classificado como \textit{NP-Hard}, ou seja, não existe algoritmo com limitação polinominal capaz de resolvẽ-lo.\cite{0010-pdf}
+			A lista de arestas correspondente será:
+
+			\begin{itemize}
+				\item cidade 1: $(1, 2), (6, 1), (4, 1)$
+				\item cidade 2: $(1, 2), (2, 3), (6, 2), (2, 5)$
+				\item cidade 3: $(2, 3), (3, 4), (5, 3)$
+				\item cidade 4: $(3, 4), (4, 5), (4, 1)$
+				\item cidade 5: $(4, 5), (5, 6), (2, 5), (5, 3)$
+				\item cidade 6: $(5, 6), (6, 1), (6, 2)$
+			\end{itemize}
+
+		Suponde que $(ij) = (ji)$.
+
+		No ERX é possível gerar um ou dois filhos. Para gerar um filho deve-se seguir o seguinte procedimento:
+		\begin{itemize}
+			\item Selecionar a cidade inicial de um dos pais (cidade 1 ou 3), pode-se selecionar a cidade com o menor número de arestas (como deu empate entre a cidade 1 e 3 seleciona-se a cidade 1)\\ $O_1=(1 x x x x x)$;
+
+			\item A cidade 1 é adjacente às cidades 2,4 e 6. A próxima cidade será aquela com menor número de arestas (cidade 4)\\ $O_1=(1 4 x x x x)$;
+			\item Repetir o passo 2 até completar o cromossomo.
+		\end{itemize}
 
 
-	\chapter{História}
-	\section{História}
+		\subsection{Operadores de mutação}
+
+			Os operadores de mutação definem como será realizada a mutação de um cromossomo\cite{0012-pdf}:
+
+			\begin{itemize}
+				\item \textit{Exchange Mutation} (EM);
+				\item \textit{Simple Inversion Operator} (SIM);
+				\item \textit{Displacement Mutation} (DM);
+				\item \textit{Insertion Mutation} (ISM);
+				\item \textit{Inversion Mutation} (IVM);
+				\item \textit{Scramble Mutation} (SM);
+			\end{itemize}
+
+			Neste trabalho será abordado apenas o operador de mutação EM, pois foi utilizado no desenvolvido da solução.
+
+
+		\subsection{Algorítmo Genético Híbrido}
+
+			Os algorítmos  Genéticos possuem o objetivo de serem robusto. Os AGs tem dificuldade em encontrar o caminho ótimo, devido ao processo de avaliação do cromossomo. 
+			Para solucionar esse problema foi criado os algoritmos genéticos híbridos.
+
+			Os algoritmos genéticos híbridos consistem em utilizar um outro método em conjunto com o AG, produzindo algoritmos eficientes na prática.
+
+		\chapter{Algoritmo de Dijkstra}
+
+			%0013-pdf
+
+
+		\chapter{Estado da Arte}
+		
+			Existem diversos trabalhos sobre a utilização de Algoritmos Genéticos na resolução do problema do TSP.
+			Segundo \cite{0005-pdf}, que criou uma implementação para resolver este problema, mostrou que AG não são eficientes 
+			na resolução do TSP em comparação com metódos exatos. Neste trabalho o AG levou mais tempo e não encontrou a solução ótima em comparação com 
+			algoritmos exatos.
+
+			A utilização de AGs motrou-se mais eficiente na resolução do mTSP do que na resolução do TSP,  
+			levando-se em conta um maior tempo de processamento para o caso mais complexo.
+
+			A solução apresentada em \cite{0006-pdf} propõe resolver os problemas de roteirização de 
+			veículos com entregas fracionadas, problema clássico de roteirização de veículos e com 
+			frota heterogênia criando o algoritmo de roteirização de veículos com frota heterogênea, 
+			restrições de janelas de tempo e entregas fracionadas(\textit{Heterogeneous Fleet Vehicle 
+			Routing Problem with Time Windows and Split Deliveries}(HFVRPTWSD)) utilizando Algoritmo 
+			Genético(AG).
+
+			Na proposta  apresentada no \cite{0011-pdf} para a resolução do mTSP com um depósito, foi criado um único cromossomo utilizando o método \textit{two-part}, que será explicado na próxima seção. Este método mostrou-se muito eficiente.
+
+			Em \cite{0005-pdf}  mostra que é possível calcular as rotas de múltiplos veículos utilizando AG para igualar o tempo 
+			de espera de encomendas de clientes, sendo que a variável "menor tempo da rota" não é levada em consideração.
+
+
+	%\chapter{Conclusão}
 	
-	\chapter{Conclusão}
 	
-	
-	\nocite{R7}
-	\nocite{fisio}
-	\nocite{olhar}
-	
-	\bibliography{referencias}
+	\bibliography{refs}
 
 \end{document}

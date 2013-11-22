@@ -1,0 +1,53 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.53 }
+
+\bibitem[Belfiore 2006]{0006-pdf}
+\abntrefinfo{Belfiore}{BELFIORE}{2006}
+{BELFIORE, P.~P.
+\emph{Scatter search para Problemas de Roteirização de Veículos com Frota
+  Heterogênea, Janelas de Tempo e Entregas Fracionadas.}
+Tese (Doutorado) --- Escola Politécnica da Universidade de São Paulo.
+  Departamento de Engenharia de Produção., 2006.}
+
+\bibitem[Benevides et al. 2012]{0010-pdf}
+\abntrefinfo{Benevides et al.}{BENEVIDES et al.}{2012}
+{BENEVIDES, P.~F. et al. AplicaÇÃo e anÁlise de alguns procedimentos de
+  contruÇÃo de rota para o problema do caixeiro viajante.
+\emph{Revista Ingeniería Industrial}, p. 17--25, 2012.}
+
+\bibitem[Carvalho 2013]{0001-pdf}
+\abntrefinfo{Carvalho}{CARVALHO}{2013}
+{CARVALHO, A.~P. de~Leon F.~de. \emph{Algoritmos Genéticos}. 2013.
+Dispon{\'\i}vel em:
+  \htmladdnormallink{$<$http:\-/\-/www2\-.icmc\-.usp\-.br\-/\~{}andre\-/research\-/genetic\-/$>$}{http://www2.icmc.usp.br/~andre/research/genetic/}.}
+
+\bibitem[Correia 2003]{0008-pdf}
+\abntrefinfo{Correia}{CORREIA}{2003}
+{CORREIA, M. Algoritmos genéticos.
+\emph{dosalgarves}, p. 36--43, junho 2003.}
+
+\bibitem[Malaquias 2006]{0012-pdf}
+\abntrefinfo{Malaquias}{MALAQUIAS}{2006}
+{MALAQUIAS, N. G.~L.
+\emph{Uso dos algoritmos genéticos para a otimização de rotas de
+  distribuição}.
+Disserta\c{c}\~ao (Mestrado) --- Universidade Federal de Uberlândia, 2006.}
+
+\bibitem[Sedighpour et al. 2011]{0011-pdf}
+\abntrefinfo{Sedighpour et al.}{SEDIGHPOUR et al.}{2011}
+{SEDIGHPOUR, M.; YOUSEFIKHOSHBAKHT, M.; DARANI, N.~M. An effective genetic
+  algorithm for solving the multiple traveling salesman problem.
+\emph{Journal of Optimization in Industrial Engineering}, p. 73--79, 2011.}
+
+\bibitem[Wu 2007]{0005-pdf}
+\abntrefinfo{Wu}{WU}{2007}
+{WU, L.
+\emph{O problema de roteirização periódica de veículos}.
+Tese (Doutorado) --- Escola Politécnica da Universidade de São Paulo.
+  Departamento de Engenharia de Transportes., 2007.}
+
+\end{thebibliography}

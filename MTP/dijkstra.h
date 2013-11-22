@@ -14,104 +14,107 @@ class Dijkstra{
 public:
     int N;
     int inicio, dest;
+    int **visitadosCopy;
     int **visitados;
-    float **caminhos;
-    float **originalCaminhos;
-    int menor(int ind, int *menor)
+    int **caminhos;
+
+    int min(int a, int b)
     {
-        int i,vertice = 0;
-        *menor = INF;
-        for(i = 0; i < N; ++i)
-
-            if(*menor > caminhos[ind][i] && caminhos[ind][i] != 0)
-            {
-                *menor =  caminhos[ind][i];
-                vertice = i;
-            }
-        //printf("vertice: %d\n", vertice);
-        return vertice;
-
+        if(a>b)
+            return b;
+        else
+            return a;
     }
-    //max = até onde se deve olhar no vetor
-    int jaVisitado(int ind, int max)
+
+    int minLinha()
     {
-        int i;
-        for(i = 0; i <= max-1; ++i)
-            if(visitados[i][0] == ind)
+        int i = 0;
+        int vertice = 0;
+        int menor = INF;
+        for(i=0;i<N;++i)
+        {
+            if(visitados[i][0] < menor && visitados[i][1] == 0 && visitados[i][0] != 0)
+            {
+                vertice = i;
+                menor = visitados[i][0];
+            }
+        }
+        return vertice;
+    }
+
+    int isExist(int peso)
+    {
+        int i = 0;
+        for(i=0;i<N;++i)
+        {
+            if(visitadosCopy[i][0] == peso)
                 return 1;
+        }
         return 0;
     }
 
-    Dijkstra(int n, float **caminhos)
+    Dijkstra(int n, int **caminhos)
     {
         this->N = n;
         this->caminhos = caminhos;
         int i,j;
 
-        this->visitados = (int**) malloc(sizeof(int*) * (n+n));
-        for(i=0;i<n+n;++i)
+        this->visitados = (int**) malloc(sizeof(int*) * (n));
+        for(i=0;i<n;++i)
             this->visitados[i] = (int*) malloc(sizeof(int) * 2);
-        this->originalCaminhos = (float**) malloc(sizeof(float*) * n);
+        this->visitadosCopy = (int**) malloc(sizeof(int*) * (n));
         for(i=0;i<n;++i)
-            this->originalCaminhos[i] = (float*) malloc(sizeof(float) * n);
-        for(i=0;i<n;++i)
-            for(j=0;j<n;++j)
-                this->originalCaminhos[i][j] = this->caminhos[i][j];
-
+            this->visitadosCopy[i] = (int*) malloc(sizeof(int) * 2);
 
     }
     // lv : indice do caminho
     // max: numero de cidades
-    float Distance(int *tour,int lv, int max, std::vector<float> *route)
+    int Distance(int *tour,int lv, int max, std::vector<int> (*route))
     {
-        if(lv == 0 && max == 0)
+        if(lv + 1 == max)
+        {
+            route->push_back(-1);
             return 0;
+        }
+        int i,j=0,k=1;
 
-        float custo = 0,re;
-        int i,j=0;
+        for(i=1;i<N;++i)
+        {
+            visitados[i][0] = INF;
+            visitados[i][1] = 0;
+        }
+        visitados[tour[lv]][0] = 0;
+        visitados[tour[lv]][1] = 1; // permanente
+        route->push_back(tour[lv]);
 
-        visitados[0][0] = tour[lv];
-        visitados[0][1] = 0;
-        for(i=0;i<N;++i)
-            for(j=0;j<N;++j)
-                this->caminhos[i][j] = this->originalCaminhos[i][j];
-        j = i = 0;
+
+        i = 0;
+        j = tour[lv];
+
         do{
 
-            visitados[j+1][0] = menor(visitados[j][0],&visitados[j][1]);
-            j++;
-            // -1 : Significa que não encontrou outro caminho a nao ser o loop
-            if(visitados[j][1] == INF-1)
-            {return -1;}
-            //verifica se esta em um loop
-            if(jaVisitado(visitados[j][0],j))
-            {
-                //Apaga o loop
-                i = visitados[j-1][0];
-                //evita o loop colocando um valor alto para nao repetir o loop
-                caminhos[i][visitados[j][0]] = INF-1;
-                j-=2;
-            }
-            if(tour[lv+1] == visitados[j][0])
-            {
-                for(i = 0;i<=j;++i)
-                {
-                    //printf("%d ", visitados[i][0]);
-                    custo += visitados[i][1];
-                    route->push_back(visitados[i][0]);
-                }
-                if(lv+1 == max-1)
-                {
-                    route->push_back(-1);
-                    return custo;
-                }
-                re = this->Distance(tour, lv+1,max,route);
-                if(re != -1)
-                    return custo + re;
-                else
-                    return -1;
-            }
-        }while(1);
+            for(i=0;i<N;++i)
+                visitadosCopy[i][0] = visitados[i][0];
+            for(i=0;i<N;++i)
+                visitados[i][0] = min(visitados[i][0], visitados[j][0] + caminhos[j][i]);
+            route->push_back(minLinha());
+
+            j = route->back();
+            visitados[j][1] = 1;
+
+
+        }while(route->back() != tour[lv+1]);
+        if(isExist(visitados[route->back()][0]))
+        {
+            route->erase(route->end()-2);
+           /* for(i=0;i<route->size();i++)
+                    std::cout << (*route)[i] ;*/
+        }else
+            for(i=0;i<route->size();i++)
+                std::cout  << (*route)[i];
+
+        return visitados[(*route)[k]][0] + this->Distance(tour, lv+1,max,route);
+
     }
 };
 #endif // DIJKSTRA_H

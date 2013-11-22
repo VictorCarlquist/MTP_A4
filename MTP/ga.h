@@ -23,7 +23,7 @@ public:
     int *Genes;
     float Score;
     int nm;
-    std::vector<float> *route;
+    std::vector<int> *route;
     //n : numero de objetivos que os caixeiros devem passar
     //m : numero de caixeiros
     //nm: n+m
@@ -61,7 +61,7 @@ class GA
         Dijkstra *dijkstra;
         
 
-        GA(int nNode, int nSalesman, float RateMutation, int nGeneration,int *depotSalesman,int nObjectives, int *objectives, int totalCities, float **cities)
+        GA(int nNode, int nSalesman, float RateMutation, int nGeneration,int *depotSalesman,int nObjectives, int *objectives, int totalCities, int **cities)
         {
             srand(time(NULL));
             this->Population.reserve(10000);
@@ -221,7 +221,7 @@ class GA
             p.push_back(k);
             k.clear();
 
-            std::vector<float> *route = new std::vector<float>();
+            std::vector<int> *route = new std::vector<int>();
             route->reserve(2000);
             for(i = 0;i<p.size();++i)
                 score+= dijkstra->Distance(&p[i][0],0,p[i].size(),route);

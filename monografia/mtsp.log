@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2013.11.12)  21 NOV 2013 16:33
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2013.11.12)  22 NOV 2013 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,88 +1160,100 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 64.
 
+Overfull \hbox (7.41063pt too wide) in paragraph at lines 69--69
+[]\EU1/lmr/bx/n/17.28 Problema dos Múltiplos Caixeiros Viajantes (\EU1/lmr/bx/i
+t/17.28 Mul-
+ []
 
-LaTeX Warning: Citation `0008-pdf' on page 6 undefined on input line 66.
-
-
-LaTeX Warning: Citation `0001-pdf' on page 6 undefined on input line 68.
-
-
-LaTeX Warning: Citation `0001-pdf' on page 6 undefined on input line 72.
-
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 69.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 74.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 81.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 85.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 85.
+(babel)             in language  on input line 81.
 [6]
-
-LaTeX Warning: Reference `pmx' on page 7 undefined on input line 87.
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 94.
+(babel)             in language  on input line 91.
 
-LaTeX Warning: Citation `0010-pdf' on page 7 undefined on input line 97.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 113.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 113.
-[7]
-Cap\'{\i }tulo 2.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 113.
+LaTeX Warning: Reference `pmx' on page 7 undefined on input line 106.
+
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 114.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 114.
+[7]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
-[8
+(babel)             in language  on input line 147.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+ [8]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 150.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 166.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 173.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 173.
+ [9]
+Cap\'{\i }tulo 2.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 173.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 178.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 178.
+[10
 
 ]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
+(babel)             in language  on input line 178.
+(./mtsp.bbl
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+ [11
 
-LaTeX Warning: Citation `R7' undefined on input line 119.
-
-
-LaTeX Warning: Citation `fisio' undefined on input line 120.
-
-
-LaTeX Warning: Citation `olhar' undefined on input line 121.
-
-No file mtsp.bbl.
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3.
+)
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 125.
+(babel)             in language  on input line 206.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 125.
-[9
+(babel)             in language  on input line 206.
+[12
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
  (./mtsp.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 125.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 125.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 206.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 206.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 26617 strings out of 495654
- 492138 string characters out of 6187555
+ 26657 strings out of 495654
+ 492778 string characters out of 6187555
  520092 words of memory out of 5000000
- 29435 multiletter control sequences out of 15000+600000
- 31492 words of font info for 68 fonts, out of 8000000 for 9000
+ 29472 multiletter control sequences out of 15000+600000
+ 31500 words of font info for 69 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  45i,7n,61p,807b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mtsp.pdf (10 pages).
+Output written on mtsp.pdf (13 pages).
