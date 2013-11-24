@@ -11,10 +11,9 @@
 #define IN 0xFFFFFF
 using namespace std;
 
-
-
-int m[N][N] = { {0,3,4,4,2,11,IN,IN},
-                {IN,0,1,1,1,1,1,1},
+/*
+int m[N][N] = { {0,IN,IN,3,4,4,2,11,IN,IN,IN,IN,IN,IN,IN},
+                {0,IN,IN,3,4,4,2,11,IN,IN,IN,IN,IN,IN,IN},
                 {1,1,0,1,1,1,1,1},
                 {1,1,1,0,1,1,1,1},
                 {1,1,1,1,0,1,1,1},
@@ -22,7 +21,7 @@ int m[N][N] = { {0,3,4,4,2,11,IN,IN},
                 {1,1,1,1,1,1,0,1},
                 {1,1,1,1,1,1,1,0}
                  };
-
+*/
 int **cities;
 
 
@@ -80,12 +79,12 @@ int main()
     for(i=0;i<N;++i)
         for(j=0;j<N;++j)
             if(i!=j)
-                cities[i][j] = rand()%20+1;
+                cities[i][j] = rand()%200+3;
             else
                 cities[i][j] = 0;
 
     createDigraph();
-    GA *a = new GA(nObjective, nSalesman,0.4f,10,depot,nObjective,objectives,N,cities);
+    GA *a = new GA(nObjective, nSalesman,0.5f,100,depot,nObjective,objectives,N,cities);
     Chromosome *x = a->evolution();
 
     cout << endl << "------------------------------" << endl;
