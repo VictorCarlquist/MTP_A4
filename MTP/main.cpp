@@ -5,14 +5,16 @@
 #include "ga.h"
 #include <fstream>
 
-#define N 8
+#define N 1000
+#define nObjective 16
+#define nSalesman 8
 #define IN 0xFFFFFF
 using namespace std;
 
 
 
-int m[N][N] = { {0,1,1,1,1,1,1,1},
-                {1,0,1,1,1,1,1,1},
+int m[N][N] = { {0,3,4,4,2,11,IN,IN},
+                {IN,0,1,1,1,1,1,1},
                 {1,1,0,1,1,1,1,1},
                 {1,1,1,0,1,1,1,1},
                 {1,1,1,1,0,1,1,1},
@@ -22,11 +24,10 @@ int m[N][N] = { {0,1,1,1,1,1,1,1},
                  };
 
 int **cities;
-int nSalesman  = 2;
-int nObjective = 4;
 
-int objectives[4] = {2,4,6,7};
-int depot[2] = {3,5};
+
+int objectives[nObjective] = {2,4,6,7,8, 10,200,302,120,21, 40,800,700,750,850 ,128};
+int depot[nSalesman] = {3,5,655,9,14,30,45,765};
 
 /*
 digraph finite_state_machine {
@@ -79,22 +80,23 @@ int main()
     for(i=0;i<N;++i)
         for(j=0;j<N;++j)
             if(i!=j)
-                cities[i][j] = m[i][j];
+                cities[i][j] = rand()%20+1;
             else
                 cities[i][j] = 0;
+
     createDigraph();
-    GA *a = new GA(nObjective, nSalesman,0.5f,100,depot,4,objectives,N,cities);
+    GA *a = new GA(nObjective, nSalesman,0.4f,10,depot,nObjective,objectives,N,cities);
     Chromosome *x = a->evolution();
 
     cout << endl << "------------------------------" << endl;
-    for(i=0;i<N;++i)
+    /*for(i=0;i<N;++i)
      {
         for(j=0;j<N;++j)
         {
-            cout << m[i][j] << " ";
+            cout << cities[i][j] << " ";
         }
         cout << endl;
-    }
+    }*/
     cout << endl;
     for(i=0; i<nObjective+nSalesman;++i) {
         cout <<  x->Genes[i] << " ";

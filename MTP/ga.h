@@ -85,10 +85,11 @@ class GA
             // cria os caminhos |0|1|2|3|4|5(|)2|2|
             int i;
             Chromosome *n = new Chromosome(this->nNode+this->nSalesman);
-            for(i=0;i<4;i++)
+            for(i=0;i<this->nObjectives;i++)
                 n->Genes[i]=this->objectives[i];
-            n->Genes[this->nNode]   = 2;
-            n->Genes[this->nNode+1] = 2;
+            for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
+                n->Genes[i]   = 2;
+
 
             this->addChromosome(n);
             for(i=0; i<this->nNode+this->nSalesman;++i)
@@ -99,15 +100,17 @@ class GA
             // cria os caminhos |3|2|1|0(|)2|2|
 
             n = new Chromosome(this->nNode+this->nSalesman);
-            for(i=0;i<4;i++)
-                n->Genes[i]=this->objectives[3-i];
-            n->Genes[this->nNode]   = 2;
-            n->Genes[this->nNode+1] = 2;
-            this->addChromosome(n);
-
+            for(i=0;i<this->nObjectives;i++)
+                n->Genes[i]=this->objectives[this->nObjectives-1-i];
+            for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
+                n->Genes[i]   = 2;
             for(i=0; i<this->nNode+this->nSalesman;++i)
                 std::cout <<  n->Genes[i] << " ";
             std::cout << std::endl;
+
+            this->addChromosome(n);
+
+
 
 
         }
@@ -115,34 +118,20 @@ class GA
         {
             int i,j;
             Chromosome *c = this->Population.back();
-
             for(i = 0;i<this->nGeneration;++i)
             {
                 c = this->crossover(c);
                 this->mutation(c);
-                for(j=0; j<this->nNode+this->nSalesman;++j)
+                /*for(j=0; j<this->nNode+this->nSalesman;++j)
                     std::cout <<  c->Genes[j] << " " ;
+                */
                 std::cout << "Score: " << c->Score << std::endl;
+
             }
             return this->Population[0];
 
         }
 
-		/**
-		* O primeiro valor deve ser o lugar que o caixairo esta inicialmente, 
-		* este local deve ser sempre o primeiro.
-        **/
-        bool isSalesmanDepot(int s, Chromosome* c)
-		{
-			int i, ind = 0;
-            for(i = this->nNode+1; i < (this->nNode+this->nSalesman)-1 ; ++i)
-			{
-				if(s == c->Genes[ind])
-					return true;
-				ind += c->Genes[i];
-			}
-			return false;
-		}
         bool isExist(int s, int *Genes)
         {
             int i = 0;
@@ -162,7 +151,7 @@ class GA
                     x = rand() % (this->nNode);
                     y = rand() % (this->nNode);
 
-                }while(x == y || this->isSalesmanDepot(x,c) || this->isSalesmanDepot(y,c));
+                }while(x == y);
 
                 z = c->Genes[x];
                 c->Genes[x] = c->Genes[y];
@@ -223,8 +212,12 @@ class GA
 
             std::vector<int> *route = new std::vector<int>();
             route->reserve(2000);
+
+
             for(i = 0;i<p.size();++i)
+            {
                 score+= dijkstra->Distance(&p[i][0],0,p[i].size(),route);
+            }
             c->route = route;
 
            return score;
@@ -232,7 +225,7 @@ class GA
         // partially-mapped crossover
         void pmx(Chromosome *g1, Chromosome *g2, Chromosome *f1, Chromosome *f2)
         {
-            int x = rand() % this->nNode-3;
+            int x = rand() % (this->nNode - 3 + 1) + 3;
             int i;
 
             for(i = 0; i<this->nNode; ++i)
@@ -266,8 +259,8 @@ class GA
                     g1->Genes[i] = this->depotSalesman[x];
                 }
             }
-            g1->Genes[this->nNode] = f1->Genes[this->nNode];
-            g1->Genes[this->nNode+1] = f1->Genes[this->nNode+1];
+            for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
+                g1->Genes[i] = f1->Genes[i];
             //Evita que as cidades sejam repetidas dentro do cromossoma
             for(i = 0; i<(this->nNode+this->nSalesman); ++i)
             {
@@ -288,8 +281,8 @@ class GA
                     g2->Genes[i] = this->depotSalesman[x];
                 }
             }
-            g2->Genes[this->nNode] = f2->Genes[this->nNode];
-            g2->Genes[this->nNode+1] = f2->Genes[this->nNode+1];
+            for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
+                g2->Genes[i] = f2->Genes[i];
 
 
 
@@ -312,10 +305,17 @@ class GA
             this->addChromosome(new1);
             this->addChromosome(new2);
 
-            if(new1->Score < new2->Score)
-                return new2;
-            else
-                return new1;
+            if(new1->Score > new2->Score)
+            {
+                if(new2->Score < a->Score){
+                    return new2;
+                }else
+                    return a;
+            }else
+                if(new1->Score < a->Score){
+                    return new1;
+                }else
+                    return a;
         }
 };
 

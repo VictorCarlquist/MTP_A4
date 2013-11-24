@@ -109,10 +109,12 @@ public:
             route->erase(route->end()-2);
            /* for(i=0;i<route->size();i++)
                     std::cout << (*route)[i] ;*/
-        }else
+        }/*else
             for(i=0;i<route->size();i++)
                 std::cout  << (*route)[i];
-
+        */
+        if(visitados[(*route)[k]][0] == 0)
+            return INF;
         return visitados[(*route)[k]][0] + this->Distance(tour, lv+1,max,route);
 
     }
