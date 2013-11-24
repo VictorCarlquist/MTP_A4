@@ -113,8 +113,6 @@ public:
             for(i=0;i<route->size();i++)
                 std::cout  << (*route)[i];
         */
-        if(visitados[(*route)[k]][0] == 0) // Nao existe caminho!
-            return INF/2;
         return visitados[(*route)[k]][0] + this->Distance(tour, lv+1,max,route);
 
     }

@@ -79,12 +79,12 @@ int main()
     for(i=0;i<N;++i)
         for(j=0;j<N;++j)
             if(i!=j)
-                cities[i][j] = rand()%200+3;
+                cities[i][j] = rand()%10+3;
             else
                 cities[i][j] = 0;
 
     createDigraph();
-    GA *a = new GA(nObjective, nSalesman,0.5f,100,depot,nObjective,objectives,N,cities);
+    GA *a = new GA(nObjective, nSalesman,0.5f,20,depot,nObjective,objectives,N,cities);
     Chromosome *x = a->evolution();
 
     cout << endl << "------------------------------" << endl;
