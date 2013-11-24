@@ -5,28 +5,36 @@
 #include "ga.h"
 #include <fstream>
 
-#define N 1000
-#define nObjective 16
-#define nSalesman 8
+#define N 15
+#define nObjective 12
+#define nSalesman 3
 #define IN 0xFFFFFF
 using namespace std;
 
-/*
-int m[N][N] = { {0,IN,IN,3,4,4,2,11,IN,IN,IN,IN,IN,IN,IN},
-                {0,IN,IN,3,4,4,2,11,IN,IN,IN,IN,IN,IN,IN},
-                {1,1,0,1,1,1,1,1},
-                {1,1,1,0,1,1,1,1},
-                {1,1,1,1,0,1,1,1},
-                {1,1,1,1,1,0,1,1},
-                {1,1,1,1,1,1,0,1},
-                {1,1,1,1,1,1,1,0}
+
+int m[N][N] = {{0,	7,	7,	5,	14,	10,	15,	18,	20,	17,	14,	12,	3,	3,	IN},
+               {7,	0,	5,	3,	17	,3,10,	13,	15,	12,	10,	8,	4,	4,	IN},
+                {7,	5,	0,	1,	15	,20,25,	22,	28,	25,	23,	22,	4,	4,	IN},
+                {5,	3,	1,	0,	13	,18,23,	20,	26,	23,	21	,20,	2,	2,	IN},
+                {14,	17,	15,	13,	0	,18,22,	17,	20,	15,	13	,16	,11,	11,	IN},
+                {10	,3	,20,18,	18	,0,	7,	7,	8,	8,	9,	11,	IN,	IN,	4},
+                {15	,10	,25	,23,22	,7	,0,	6,	7,	7,	8,	10,	IN,	IN,	3},
+                {18	,13	,22	,20	,17	,7	,6,0,	7,	7,	8,	11,	IN,	IN,	3},
+                {20	,15	,28	,26	,20	,8	,7,	7,	0,	8,	9,	11,	IN,	IN,	4},
+                {17,	12	,25	,23	,15	,8	,7,	7,	8,	0,	9,	11,	IN,	IN,	4},
+               { 14	,10	,23	,21	,13	,9	,8,	8,	9,	9,	0,	12,	IN,	IN,	5},
+               { 12,	8	,22	,20	,16	,11	,10,	11,	11,	11,	12,	0	,IN	,IN,	7},
+               { 3,	4	,4	,2	,11	,IN	,IN,	IN,	IN,	IN,	IN,	IN,	0,	IN	,IN},
+               { 3,	4	,4	,2	,11	,IN	,IN,	IN,	IN,	IN,	IN,	IN,	IN,	0,IN},
+               { IN,	IN	,IN	,IN	,IN	,4	,3,	3,	4,	4,	5,	7,	IN ,	IN,	0}
+
                  };
-*/
+
 int **cities;
 
 
-int objectives[nObjective] = {2,4,6,7,8, 10,200,302,120,21, 40,800,700,750,850 ,128};
-int depot[nSalesman] = {3,5,655,9,14,30,45,765};
+int objectives[nObjective] = {0,1,2,3,4,5,6,7,8,9,10,11};
+int depot[nSalesman] = {12,13,14};
 
 /*
 digraph finite_state_machine {
@@ -79,12 +87,12 @@ int main()
     for(i=0;i<N;++i)
         for(j=0;j<N;++j)
             if(i!=j)
-                cities[i][j] = rand()%10+3;
+                cities[i][j] = m[i][j];
             else
                 cities[i][j] = 0;
 
     createDigraph();
-    GA *a = new GA(nObjective, nSalesman,0.5f,20,depot,nObjective,objectives,N,cities);
+    GA *a = new GA(nObjective, nSalesman,0.5f,20000,depot,nObjective,objectives,N,cities);
     Chromosome *x = a->evolution();
 
     cout << endl << "------------------------------" << endl;

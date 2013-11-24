@@ -76,7 +76,7 @@ public:
             route->push_back(-1);
             return 0;
         }
-        int i,j=0,k=1;
+        int i,j=0,k=0;
 
         for(i=1;i<N;++i)
         {
@@ -102,7 +102,9 @@ public:
             j = route->back();
             visitados[j][1] = 1;
 
-
+            if(k> N*N*N)
+                return INF/2;
+            k++;
         }while(route->back() != tour[lv+1]);
         if(isExist(visitados[route->back()][0]))
         {
@@ -113,7 +115,9 @@ public:
             for(i=0;i<route->size();i++)
                 std::cout  << (*route)[i];
         */
-        return visitados[(*route)[k]][0] + this->Distance(tour, lv+1,max,route);
+        if(visitados[(*route)[route->size()-1]][0] == 0)
+            return INF/2;
+        return visitados[(*route)[route->size()-1]][0] + this->Distance(tour, lv+1,max,route);
 
     }
 };

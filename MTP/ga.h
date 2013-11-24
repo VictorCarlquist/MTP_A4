@@ -87,14 +87,18 @@ class GA
             Chromosome *n = new Chromosome(this->nNode+this->nSalesman);
             for(i=0;i<this->nObjectives;i++)
                 n->Genes[i]=this->objectives[i];
-            for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
-                n->Genes[i]   = 2;
+            //for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
+            //    n->Genes[i]   = 2;
+            n->Genes[this->nNode] = 2;
+            n->Genes[this->nNode+1] = 3;
+            n->Genes[this->nNode+2] = 7;
 
 
-            this->addChromosome(n);
             for(i=0; i<this->nNode+this->nSalesman;++i)
                 std::cout <<  n->Genes[i] << " ";
             std::cout << std::endl;
+
+             this->addChromosome(n);
 
             // reverse
             // cria os caminhos |3|2|1|0(|)2|2|
@@ -102,8 +106,12 @@ class GA
             n = new Chromosome(this->nNode+this->nSalesman);
             for(i=0;i<this->nObjectives;i++)
                 n->Genes[i]=this->objectives[this->nObjectives-1-i];
-            for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
+            /*for(i=this->nNode;i<this->nNode+this->nSalesman;++i)
                 n->Genes[i]   = 2;
+            */
+            n->Genes[this->nNode] = 2;
+            n->Genes[this->nNode+1] = 3;
+            n->Genes[this->nNode+2] = 7;
             for(i=0; i<this->nNode+this->nSalesman;++i)
                 std::cout <<  n->Genes[i] << " ";
             std::cout << std::endl;
