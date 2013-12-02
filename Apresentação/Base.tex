@@ -1,0 +1,64 @@
+%Arquivo com os principais pacotes usados e suas descrições.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 			Idiomas e Acentos			%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[brazil]{babel} % Habilita o uso do idioma português do brasil (PT-BR).
+\usepackage[T1]{fontenc} 
+%\usepackage{fontspec} % Habilita maior variedade de acentos. Pode ser necessario adicionar outros pacotes.
+\usepackage{lmodern} % Habilita o uso da font Latin Modern.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 				TABELAS					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{tabulary} % Cria tabelas mais facilmente.
+%\usepackage{booktabs} % Melhora o visual das tabelas.
+%\usepackage[table]{xcolor} % Pacote de cor pra as tabelas.
+%\usepackage{caption} % Melhora as legendas de imagens, tabela etc.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 				IMAGENS					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{graphicx} % Facilita a inserção de imagens.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 			CÓDIGO FONTE				%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Documentação de código fonte.
+\usepackage{listings}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	Símbolos e Caracteres Matemáticos	%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+%\usepackage{mathspec} %Habilita o uso das fontes e dos caracteres matematicos.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				ABNT					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[alf]{abntcite} % Ordena as referencias em ordem alfabética.
+\usepackage{url} %Facilita o uso de url. Pode-se usar o comando \url{...}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 			Configurações				%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\captionsetup{justification=centering,labelfont=bf} %Formata a legenda das figuras.
+%\graphicspath{{../imgs/}} %Define o diretorio padrão para buscar as imagens da apresentação.  
+%\setromanfont[Ligatures=TeX]{Crimson}
+%\defaultfontfeatures{Scale=MatchLowercase, Mapping=tex-tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				BEAMER					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Define algumas configurações que serão validas para todo o documento.  
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{background canvas}[vertical shading][bottom=blue!3,top=blue!7]
+\setbeamertemplate{caption}[numbered]
